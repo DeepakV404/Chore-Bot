@@ -6,5 +6,5 @@
 * If you manage to avoid the Bot until the very last door, you win!
 * See if you can score a winning streak!
 
-http://github.com - automatic!
-[GitHub](http://github.com)
+https://deepakv404.github.io/Find-the-Bot/ 
+[Find me out game](https://deepakv404.github.io/Find-the-Bot/)
