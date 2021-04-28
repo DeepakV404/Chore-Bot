@@ -17,7 +17,6 @@ let currentStreak = document.getElementById('score-number');
 let bestStreak = document.getElementById('high-score-number');
 currentStreak.innerHTML = score;
 bestStreak.innerHTML = highScore;
-
 const isClicked = (door) => {
   if (door.src == closedDoorPath) {
     return false;
@@ -25,7 +24,6 @@ const isClicked = (door) => {
     return true;
   }
 }
-
 const isBot = (door) => {
   if (door.src === botDoorPath) {
     return true;
@@ -33,7 +31,6 @@ const isBot = (door) => {
     return false;
   }
 }
-
 const playDoor = (door) => {
   numClosedDoors--;
   if (numClosedDoors === 0) {
@@ -42,7 +39,6 @@ const playDoor = (door) => {
     gameOver('lose');
   }
 }
-
 const randomChoreDoorGenerator = () => {
   choreDoor = Math.floor(Math.random() * 6);
   switch (choreDoor) {
@@ -78,32 +74,27 @@ const randomChoreDoorGenerator = () => {
       break;
   }
 }
-
 door1.onclick = () => {
   if(currentlyPlaying && !isClicked(door1)) {
     door1.src = openDoor1;
     playDoor(door1);
   }
 }
-
 door2.onclick = () => {
   if(currentlyPlaying && !isClicked(door2)) {
     door2.src = openDoor2;
     playDoor(door2);
   }
 }
-
 door3.onclick = () => {
   if(currentlyPlaying && !isClicked(door3)) {
     door3.src = openDoor3;
     playDoor(door3);
   }
 }
-
 startButton.onclick = () => {
     startRound();
 }
-
 const startRound = () => {
   door1.src = closedDoorPath;
   door2.src = closedDoorPath;
@@ -113,7 +104,6 @@ const startRound = () => {
   startButton.innerHTML = 'Good luck!';
   randomChoreDoorGenerator();
 }
-
 const gameOver = (str) => {
   if(str === 'win') {
     startButton.innerHTML = 'You win! Play again?';
@@ -125,7 +115,6 @@ const gameOver = (str) => {
   }
   currentlyPlaying = false;
 }
-
 const getYourScore = () => {
   score++;
   currentStreak.innerHTML = score;
@@ -134,6 +123,4 @@ const getYourScore = () => {
     bestStreak.innerHTML = highScore;
   }
 }
-
-
 startRound();
